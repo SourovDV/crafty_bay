@@ -199,6 +199,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Email Address'**
   String get emailAddress;
+
+  /// No description provided for @doNotHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t have an account'**
+  String get doNotHaveAnAccount;
+
+  /// No description provided for @signUp.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign Up'**
+  String get signUp;
+
+  /// No description provided for @signIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign In '**
+  String get signIn;
+
+  /// No description provided for @registerYourAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Register your account'**
+  String get registerYourAccount;
+
+  /// No description provided for @email.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get email;
+
+  /// No description provided for @deliveryAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Delivery Address'**
+  String get deliveryAddress;
+
+  /// No description provided for @password.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get password;
+
+  /// No description provided for @alreadyHaveAnAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already Have An Account'**
+  String get alreadyHaveAnAccount;
+
+  /// No description provided for @a4digitOtpCodeHasBeenSend.
+  ///
+  /// In en, this message translates to:
+  /// **'A 4 digit OTP code has been sent'**
+  String get a4digitOtpCodeHasBeenSend;
 }
 
 class _AppLocalizationsDelegate

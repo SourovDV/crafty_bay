@@ -16,6 +16,15 @@
   "welcomeBack": "Welcome Back",
   "pleaseEnterYourEmailAddress": "Please Enter your email Address",
   "emailAddress": "Email Address",
+  "doNotHaveAnAccount": "Don't have an account",
+  "signUp": "Sign Up",
+  "signIn": "Sign In ",
+  "registerYourAccount": "Register your account",
+  "email": "Email",
+  "deliveryAddress": "Delivery Address",
+  "password": "Password",
+  "alreadyHaveAnAccount": "Already Have An Account",
+  "a4digitOtpCodeHasBeenSend": "A 4 digit OTP code has been sent",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   }

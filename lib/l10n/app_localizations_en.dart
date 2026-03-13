@@ -59,4 +59,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get emailAddress => 'Email Address';
+
+  @override
+  String get doNotHaveAnAccount => 'Don\'t have an account';
+
+  @override
+  String get signUp => 'Sign Up';
+
+  @override
+  String get signIn => 'Sign In ';
+
+  @override
+  String get registerYourAccount => 'Register your account';
+
+  @override
+  String get email => 'Email';
+
+  @override
+  String get deliveryAddress => 'Delivery Address';
+
+  @override
+  String get password => 'Password';
+
+  @override
+  String get alreadyHaveAnAccount => 'Already Have An Account';
+
+  @override
+  String get a4digitOtpCodeHasBeenSend => 'A 4 digit OTP code has been sent';
 }

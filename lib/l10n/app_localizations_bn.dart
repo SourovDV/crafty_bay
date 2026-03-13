@@ -58,4 +58,31 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get emailAddress => 'ইমেল অ্যাড্রেস';
+
+  @override
+  String get doNotHaveAnAccount => 'আপনার একাউন্ট নেই ';
+
+  @override
+  String get signUp => 'রেজিস্টার করুন';
+
+  @override
+  String get signIn => 'লগিন করুন ';
+
+  @override
+  String get registerYourAccount => 'আপনার অ্যাকাউন্টটি রেজিস্টার করুন';
+
+  @override
+  String get email => 'ইমেল';
+
+  @override
+  String get deliveryAddress => 'ডেলিভারি অ্যাড্রেস';
+
+  @override
+  String get password => 'পাসয়াদ';
+
+  @override
+  String get alreadyHaveAnAccount => 'অলরেডি আপনার অ্যাকাউন্ট আছে';
+
+  @override
+  String get a4digitOtpCodeHasBeenSend => '4 ডিজিটের OTP কোড পাঠানো হয়েছে ।';
 }

@@ -15,5 +15,14 @@
   "resendCode": "আবার পাঠান",
   "welcomeBack": "ওয়েলকাম বেক ",
   "pleaseEnterYourEmailAddress": "দয়া করে আপনার ইমেলটি দিন",
-  "emailAddress": "ইমেল অ্যাড্রেস"
+  "emailAddress": "ইমেল অ্যাড্রেস",
+  "doNotHaveAnAccount": "আপনার একাউন্ট নেই ",
+  "signUp": "রেজিস্টার করুন",
+  "signIn": "লগিন করুন ",
+  "registerYourAccount": "আপনার অ্যাকাউন্টটি রেজিস্টার করুন",
+  "email": "ইমেল",
+  "deliveryAddress": "ডেলিভারি অ্যাড্রেস",
+  "password": "পাসয়াদ",
+  "alreadyHaveAnAccount": "অলরেডি আপনার অ্যাকাউন্ট আছে",
+  "a4digitOtpCodeHasBeenSend": "4 ডিজিটের OTP কোড পাঠানো হয়েছে ।"
 }
