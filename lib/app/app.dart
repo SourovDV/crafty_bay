@@ -1,4 +1,5 @@
 import 'package:crafty_bay/app/appRoutes.dart';
+import 'package:crafty_bay/app/app_color.dart';
 import 'package:crafty_bay/l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -26,8 +27,23 @@ class MyApp extends StatelessWidget {
             Locale('en'), // English
             Locale('bn'), // Spanish
           ],
-          locale: Locale("bn"),
+          locale: Locale("en"),
           debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            textTheme: TextTheme(
+              titleLarge:TextStyle(fontSize: 25.sp,fontWeight: FontWeight.bold)
+            ),
+            inputDecorationTheme: InputDecorationThemeData(
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8.r),
+                borderSide: BorderSide(width: 2,color: AppColor.colorPrimary),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8.r),
+                borderSide: BorderSide(width: 2,color: Colors.blue),
+              ),
+            )
+          ),
           initialRoute: AppRoutes.initialPage,
           getPages: AppRoutes.routes,
         );

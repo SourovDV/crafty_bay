@@ -181,6 +181,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Resend Code'**
   String get resendCode;
+
+  /// No description provided for @welcomeBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome Back'**
+  String get welcomeBack;
+
+  /// No description provided for @pleaseEnterYourEmailAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Please Enter your email Address'**
+  String get pleaseEnterYourEmailAddress;
+
+  /// No description provided for @emailAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Email Address'**
+  String get emailAddress;
 }
 
 class _AppLocalizationsDelegate

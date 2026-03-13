@@ -13,6 +13,9 @@
   "next": "Next",
   "thisCodeWillExpireIn": "This code will expire in 120s",
   "resendCode": "Resend Code",
+  "welcomeBack": "Welcome Back",
+  "pleaseEnterYourEmailAddress": "Please Enter your email Address",
+  "emailAddress": "Email Address",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   }

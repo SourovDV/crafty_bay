@@ -21,32 +21,41 @@ class AppLocalizationsBn extends AppLocalizations {
   String get getStartedWithUsWithYour => 'আপনার ডিটেইস দিয়ে শুরু করুন';
 
   @override
-  String get firstname => 'First Name';
+  String get firstname => 'প্রথম নাম';
 
   @override
-  String get lastName => 'Last Name';
+  String get lastName => 'শেষ নাম';
 
   @override
-  String get mobile => 'Mobile';
+  String get mobile => 'মোবাইল';
 
   @override
-  String get city => 'City';
+  String get city => 'শহর ';
 
   @override
-  String get shippingAddress => 'Shipping Address';
+  String get shippingAddress => 'শিপিং অ্যাড্রেস ';
 
   @override
-  String get complete => 'Complete';
+  String get complete => 'কম্পিলিট ';
 
   @override
-  String get enterOtpCode => 'Enter OTP Code';
+  String get enterOtpCode => 'ইন্টার অটিপি কোড ';
 
   @override
-  String get next => 'Next';
+  String get next => 'নেক্স ';
 
   @override
-  String get thisCodeWillExpireIn => 'This code will expire in 120s';
+  String get thisCodeWillExpireIn => 'কোডটা শেষ হবে ৫০ সেকেন্ড পর ';
 
   @override
-  String get resendCode => 'Resend Code';
+  String get resendCode => 'আবার পাঠান';
+
+  @override
+  String get welcomeBack => 'ওয়েলকাম বেক ';
+
+  @override
+  String get pleaseEnterYourEmailAddress => 'দয়া করে আপনার ইমেলটি দিন';
+
+  @override
+  String get emailAddress => 'ইমেল অ্যাড্রেস';
 }
