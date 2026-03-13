@@ -1,0 +1,19 @@
+{
+  "helloWorld": "Hello World!",
+  "version": "version 1",
+  "completeProfile": "Complete Profile",
+  "getStartedWithUsWithYour" : "Get started with us with your details",
+  "firstname": "First Name",
+  "lastName": "Last Name",
+  "mobile": "Mobile",
+  "city": "City",
+  "shippingAddress": "Shipping Address",
+  "complete": "Complete",
+  "enterOtpCode": "Enter OTP Code",
+  "next": "Next",
+  "thisCodeWillExpireIn": "This code will expire in 120s",
+  "resendCode": "Resend Code",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  }
+}

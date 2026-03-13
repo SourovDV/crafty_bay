@@ -1,0 +1,16 @@
+{
+  "helloWorld": "¡Hola Mundo!",
+   "version": "ভারসন ১ ",
+  "completeProfile": "কম্পিলিট প্রফাইল",
+  "getStartedWithUsWithYour" : "আপনার ডিটেইস দিয়ে শুরু করুন",
+  "firstname": "First Name",
+  "lastName": "Last Name",
+  "mobile": "Mobile",
+  "city": "City",
+  "shippingAddress": "Shipping Address",
+  "complete": "Complete",
+  "enterOtpCode": "Enter OTP Code",
+  "next": "Next",
+  "thisCodeWillExpireIn": "This code will expire in 120s",
+  "resendCode": "Resend Code"
+}
