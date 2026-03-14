@@ -11,7 +11,6 @@ import 'package:crafty_bay/feature/screen/controller/otp_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/sign_in_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/sign_up_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/splash_controller.dart';
-import 'package:crafty_bay/feature/screen/view/item/single_product_details.dart';
 import 'package:get/get.dart';
 
 class AllBindings extends Bindings{
@@ -28,7 +27,7 @@ class AllBindings extends Bindings{
     Get.lazyPut(()=>WishController());
     Get.lazyPut(()=>CommonCategoriesControllers());
     Get.lazyPut(()=>CategoriesDetailsController());
-    Get.lazyPut(()=>SingleProductDetails());
+    Get.lazyPut(()=>SingleProductDetailsController());
     Get.lazyPut(()=>CommonPopularItemController());
     Get.lazyPut(()=>SingleProductDetailsController());
 

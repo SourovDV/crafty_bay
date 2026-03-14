@@ -1,11 +1,10 @@
 import 'package:crafty_bay/app/appPages.dart';
 import 'package:crafty_bay/feature/screen/bindings/bindings.dart';
-import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/common_categories_controller.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/categorie_details.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/common_categories_item.dart';
 import 'package:crafty_bay/feature/screen/view/item/product_item_view/common_popular_item.dart';
 import 'package:crafty_bay/feature/screen/view/item/item_view.dart';
-import 'package:crafty_bay/feature/screen/view/item/single_product_details.dart';
+import 'package:crafty_bay/feature/screen/view/item/product_item_view/single_product_details.dart';
 import 'package:crafty_bay/feature/screen/view/otp_screen.dart';
 import 'package:crafty_bay/feature/screen/view/sign_in_view.dart';
 import 'package:crafty_bay/feature/screen/view/sign_up_screen.dart';
@@ -22,7 +21,6 @@ class AppRoutes{
     GetPage(name: AppPages.itemScreen, page:()=>ItemView(),binding: AllBindings()),
     GetPage(name: AppPages.categoriesDetails, page:()=>CategoriesDetailsView(),binding: AllBindings()),
     GetPage(name: AppPages.commonCategories, page:()=>CategoriesItem(),binding: AllBindings()),
-    GetPage(name: AppPages.singleProductDetails, page:()=>SingleProductDetails(),binding: AllBindings()),
     GetPage(name: AppPages.commonPopularItem, page:()=>CommonPopularItem(),binding: AllBindings()),
     GetPage(name: AppPages.singleProductDetails, page:()=>SingleProductDetails(),binding: AllBindings()),
   ];
