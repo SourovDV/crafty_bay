@@ -1,5 +1,6 @@
 import 'package:crafty_bay/app/appPages.dart';
 import 'package:crafty_bay/feature/screen/bindings/bindings.dart';
+import 'package:crafty_bay/feature/screen/view/item/item_view.dart';
 import 'package:crafty_bay/feature/screen/view/otp_screen.dart';
 import 'package:crafty_bay/feature/screen/view/sign_in_view.dart';
 import 'package:crafty_bay/feature/screen/view/sign_up_screen.dart';
@@ -13,5 +14,6 @@ class AppRoutes{
     GetPage(name: AppPages.signUpScreen, page:()=>SignUpScreen(),binding: AllBindings()),
     GetPage(name: AppPages.signInScreen, page:()=>SignInView(),binding: AllBindings()),
     GetPage(name: AppPages.otpScreen, page:()=>OtpScreen(),binding: AllBindings()),
+    GetPage(name: AppPages.itemScreen, page:()=>ItemView(),binding: AllBindings()),
   ];
 }

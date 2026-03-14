@@ -40,6 +40,7 @@ dependencies:
     sdk: flutter
   intl: any
   pin_code_fields: ^9.1.0
+  carousel_slider: ^5.1.2
 
 
 dev_dependencies:

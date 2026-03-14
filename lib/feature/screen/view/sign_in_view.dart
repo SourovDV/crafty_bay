@@ -43,7 +43,7 @@ class SignInView extends GetView<SignInController> {
           SizedBox(height: 5.h),
           TextFormField(decoration: InputDecoration(hintText: "Password")),
           SizedBox(height: 15.h),
-          CommonNextButton(text: 'Next', call: () {}),
+          CommonNextButton(text: 'Next', call: () {controller.moveToItemScreen();}),
           SizedBox(height: 10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

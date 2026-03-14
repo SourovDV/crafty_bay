@@ -85,4 +85,31 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get a4digitOtpCodeHasBeenSend => '4 ডিজিটের OTP কোড পাঠানো হয়েছে ।';
+
+  @override
+  String get allCategories => 'সব কেটাগরি';
+
+  @override
+  String get seeAll => 'সব দেখুন';
+
+  @override
+  String get electronics => 'ইলেকট্রনিক্স';
+
+  @override
+  String get food => 'ফুড';
+
+  @override
+  String get fashion => 'ফেশন';
+
+  @override
+  String get furniture => 'ফানিচার';
+
+  @override
+  String get popular => 'পপুলার';
+
+  @override
+  String get special => 'স্পেশাল';
+
+  @override
+  String get notun => 'নতুন';
 }

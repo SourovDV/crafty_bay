@@ -24,5 +24,14 @@
   "deliveryAddress": "ডেলিভারি অ্যাড্রেস",
   "password": "পাসয়াদ",
   "alreadyHaveAnAccount": "অলরেডি আপনার অ্যাকাউন্ট আছে",
-  "a4digitOtpCodeHasBeenSend": "4 ডিজিটের OTP কোড পাঠানো হয়েছে ।"
+  "a4digitOtpCodeHasBeenSend": "4 ডিজিটের OTP কোড পাঠানো হয়েছে ।",
+  "allCategories": "সব কেটাগরি",
+  "seeAll": "সব দেখুন",
+  "electronics": "ইলেকট্রনিক্স",
+  "food": "ফুড",
+  "fashion": "ফেশন",
+  "furniture": "ফানিচার",
+  "popular": "পপুলার",
+  "special": "স্পেশাল",
+  "notun": "নতুন"
 }

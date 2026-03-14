@@ -5,4 +5,8 @@ class SignInController extends GetxController{
   void moveToSignUpPage(){
     Get.toNamed(AppPages.signUpScreen);
   }
+  void moveToItemScreen(){
+    Get.toNamed(AppPages.itemScreen);
+  }
+
 }

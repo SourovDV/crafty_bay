@@ -1,3 +1,8 @@
+import 'package:crafty_bay/feature/screen/controller/item_controller/card_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/item_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/wish_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/otp_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/sign_in_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/sign_up_controller.dart';
@@ -11,6 +16,11 @@ class AllBindings extends Bindings{
     Get.put(SignInController());
     Get.lazyPut(()=>SignUpController());
     Get.lazyPut(()=>OtpController());
+    Get.lazyPut(()=>ItemController());
+    Get.lazyPut(()=>HomeController());
+    Get.lazyPut(()=>CategoriesController());
+    Get.lazyPut(()=>CardController());
+    Get.lazyPut(()=>WishController());
   }
 
 }

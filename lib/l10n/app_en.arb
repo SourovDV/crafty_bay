@@ -25,6 +25,15 @@
   "password": "Password",
   "alreadyHaveAnAccount": "Already Have An Account",
   "a4digitOtpCodeHasBeenSend": "A 4 digit OTP code has been sent",
+  "allCategories": "All Categories",
+  "seeAll": "See All",
+  "electronics": "Electronics",
+  "food": "Food",
+  "fashion": "Fashion",
+  "furniture": "Furniture",
+  "popular": "Popular",
+  "special": "Special",
+  "notun": "New",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   }

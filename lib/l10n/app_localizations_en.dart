@@ -86,4 +86,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get a4digitOtpCodeHasBeenSend => 'A 4 digit OTP code has been sent';
+
+  @override
+  String get allCategories => 'All Categories';
+
+  @override
+  String get seeAll => 'See All';
+
+  @override
+  String get electronics => 'Electronics';
+
+  @override
+  String get food => 'Food';
+
+  @override
+  String get fashion => 'Fashion';
+
+  @override
+  String get furniture => 'Furniture';
+
+  @override
+  String get popular => 'Popular';
+
+  @override
+  String get special => 'Special';
+
+  @override
+  String get notun => 'New';
 }

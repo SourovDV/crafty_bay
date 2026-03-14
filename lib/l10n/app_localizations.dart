@@ -253,6 +253,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'A 4 digit OTP code has been sent'**
   String get a4digitOtpCodeHasBeenSend;
+
+  /// No description provided for @allCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'All Categories'**
+  String get allCategories;
+
+  /// No description provided for @seeAll.
+  ///
+  /// In en, this message translates to:
+  /// **'See All'**
+  String get seeAll;
+
+  /// No description provided for @electronics.
+  ///
+  /// In en, this message translates to:
+  /// **'Electronics'**
+  String get electronics;
+
+  /// No description provided for @food.
+  ///
+  /// In en, this message translates to:
+  /// **'Food'**
+  String get food;
+
+  /// No description provided for @fashion.
+  ///
+  /// In en, this message translates to:
+  /// **'Fashion'**
+  String get fashion;
+
+  /// No description provided for @furniture.
+  ///
+  /// In en, this message translates to:
+  /// **'Furniture'**
+  String get furniture;
+
+  /// No description provided for @popular.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular'**
+  String get popular;
+
+  /// No description provided for @special.
+  ///
+  /// In en, this message translates to:
+  /// **'Special'**
+  String get special;
+
+  /// No description provided for @notun.
+  ///
+  /// In en, this message translates to:
+  /// **'New'**
+  String get notun;
 }
 
 class _AppLocalizationsDelegate
