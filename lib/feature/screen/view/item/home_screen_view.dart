@@ -1,7 +1,8 @@
 import 'package:crafty_bay/app/app_color.dart';
 import 'package:crafty_bay/core/extension.dart';
 import 'package:crafty_bay/feature/common/carosul.dart';
-import 'package:crafty_bay/feature/common/categories_item.dart';
+import 'package:crafty_bay/feature/screen/view/item/product_item_view/common_popular_item.dart';
+import 'package:crafty_bay/feature/screen/view/item/categories/common_categories_item.dart';
 import 'package:crafty_bay/feature/common/slider_icon.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller.dart';
 import 'package:crafty_bay/feature/screen/utils/image_path.dart';
@@ -47,7 +48,7 @@ class HomeScreenView extends GetView<HomeController> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (context, index) {
-                    return popularItem();
+                    return CommonPopularItem();
                   },
                 ),
               ),
@@ -62,7 +63,7 @@ class HomeScreenView extends GetView<HomeController> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (context, index) {
-                    return popularItem();
+                    return CommonPopularItem();
                   },
                 ),
               ),
@@ -77,7 +78,7 @@ class HomeScreenView extends GetView<HomeController> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 5,
                   itemBuilder: (context, index) {
-                    return popularItem();
+                    return CommonPopularItem();
                   },
                 ),
               ),
@@ -88,74 +89,11 @@ class HomeScreenView extends GetView<HomeController> {
     );
   }
 
-  Container popularItem() {
-    return Container(
-      margin: EdgeInsets.only(right: 10),
-      width: 160,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.shade200,
-            blurRadius: 5,
-            spreadRadius: 2,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            height: 110,
-            width: double.infinity,
-            decoration: BoxDecoration(
-              color: Color(0xffcfe3e6),
-              borderRadius: BorderRadius.vertical(top: Radius.circular(10)),
-            ),
-            child: Padding(padding: EdgeInsets.all(10), child: Text("sfs")),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "New Year Special Shoe 30",
-                  style: TextStyle(fontSize: 12),
-                ),
-                SizedBox(height: 6),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "\$100",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.teal,
-                      ),
-                    ),
-                    Row(
-                      children: [
-                        Icon(Icons.star, size: 14, color: Colors.amber),
-                        SizedBox(width: 2),
-                        Text("4.8", style: TextStyle(fontSize: 12)),
-                      ],
-                    ),
-                    Icon(Icons.favorite_border, size: 16, color: Colors.teal),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+
 
   SizedBox allCategories() {
     return SizedBox(
-      height: 100,
+      height: 120.h,
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

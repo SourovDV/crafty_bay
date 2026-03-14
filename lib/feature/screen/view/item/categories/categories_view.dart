@@ -1,6 +1,7 @@
 import 'package:crafty_bay/app/app_color.dart';
 import 'package:crafty_bay/core/extension.dart';
-import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller.dart';
+import 'package:crafty_bay/feature/screen/view/item/categories/common_categories_item.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_controller.dart';
 import 'package:crafty_bay/feature/screen/view/item/home_screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,23 +33,7 @@ class CategoriesView extends GetView<CategoriesController> {
         childAspectRatio: 0.8,
       ),
           itemBuilder: (context,index){
-            return Card(
-              color: AppColor.colorPrimary.withOpacity(0.3),
-              elevation: 1,
-              child:Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(15),
-                    child: Icon(
-                      Icons.computer,
-                      size: 48.sp,
-                      color: AppColor.colorPrimary,
-                    ),
-                  ),
-                  Text("Electronic")
-                ],
-              )
-            );
+            return CategoriesItem();
           })
     );
   }
