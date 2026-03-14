@@ -16,9 +16,9 @@ class ItemView extends GetView<ItemController> {
           },
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-            NavigationDestination(icon: Icon(Icons.home), label: "Categories"),
-            NavigationDestination(icon: Icon(Icons.home), label: "Card"),
-            NavigationDestination(icon: Icon(Icons.home), label: "Wish"),
+            NavigationDestination(icon: Icon(Icons.category), label: "Categories"),
+            NavigationDestination(icon: Icon(Icons.shopping_cart), label: "Card"),
+            NavigationDestination(icon: Icon(Icons.favorite_border), label: "Wish"),
           ]),)
     );
   }

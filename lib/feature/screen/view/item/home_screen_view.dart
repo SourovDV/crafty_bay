@@ -1,6 +1,7 @@
 import 'package:crafty_bay/app/app_color.dart';
 import 'package:crafty_bay/core/extension.dart';
 import 'package:crafty_bay/feature/common/carosul.dart';
+import 'package:crafty_bay/feature/common/categories_item.dart';
 import 'package:crafty_bay/feature/common/slider_icon.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller.dart';
 import 'package:crafty_bay/feature/screen/utils/image_path.dart';
@@ -29,12 +30,14 @@ class HomeScreenView extends GetView<HomeController> {
               CommonSliderIcon(controller: controller),
               SizedBox(height: 10.h),
               //all categories
-              itemSection(theme: theme, name:context.localizations.allCategories,),
+              itemSection(theme: theme, name:context.localizations.allCategories, onTap: () {
+              controller.moveTo();
+              },),
               SizedBox(height: 20.h),
               allCategories(),
               SizedBox(height: 20.h),
               //popular
-              itemSection(theme: theme, name: context.localizations.popular,),
+              itemSection(theme: theme, name: context.localizations.popular, onTap: () {  },),
               SizedBox(height: 20.h),
 
               SizedBox(
@@ -50,7 +53,7 @@ class HomeScreenView extends GetView<HomeController> {
               ),
               SizedBox(height: 20.h),
               //special
-              itemSection(theme: theme, name: context.localizations.special,),
+              itemSection(theme: theme, name: context.localizations.special, onTap: () {  },),
               SizedBox(height: 20.h),
               SizedBox(
                 height: 200.h,
@@ -65,7 +68,7 @@ class HomeScreenView extends GetView<HomeController> {
               ),
 
               //new
-              itemSection(theme: theme, name: context.localizations.notun,),
+              itemSection(theme: theme, name: context.localizations.notun, onTap: () {  },),
               SizedBox(height: 20.h),
               SizedBox(
                 height: 200.h,
@@ -158,18 +161,7 @@ class HomeScreenView extends GetView<HomeController> {
         scrollDirection: Axis.horizontal,
         itemCount: 8,
         itemBuilder: (context, index) {
-          return Card(
-            color: AppColor.colorPrimary.withOpacity(0.3),
-            elevation: 1,
-            child: Padding(
-              padding: EdgeInsets.all(15),
-              child: Icon(
-                Icons.computer,
-                size: 48.sp,
-                color: AppColor.colorPrimary,
-              ),
-            ),
-          );
+          return CategoriesItem();
         },
       ),
     );
@@ -233,11 +225,12 @@ class HomeScreenView extends GetView<HomeController> {
 class itemSection extends StatelessWidget {
   const itemSection({
     super.key,
-    required this.theme, required this.name,
+    required this.theme, required this.name, required this.onTap,
   });
 
   final TextTheme theme;
   final String name;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -249,11 +242,14 @@ class itemSection extends StatelessWidget {
            name,
           style: theme.titleLarge?.copyWith(fontSize: 22.sp),
         ),
-        Text(
-          context.localizations.seeAll,
-          style: theme.titleSmall?.copyWith(
-            fontSize: 15.sp,
-            fontWeight: FontWeight.bold,
+        InkWell(
+          onTap: onTap,
+          child: Text(
+            context.localizations.seeAll,
+            style: theme.titleSmall?.copyWith(
+              fontSize: 15.sp,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],
