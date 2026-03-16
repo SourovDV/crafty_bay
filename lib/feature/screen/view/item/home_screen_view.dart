@@ -1,9 +1,9 @@
 import 'package:crafty_bay/app/app_color.dart';
 import 'package:crafty_bay/core/extension.dart';
-import 'package:crafty_bay/feature/common/carosul.dart';
+import 'package:crafty_bay/feature/screen/view/widget/carosul.dart';
 import 'package:crafty_bay/feature/screen/view/item/product_item_view/common_popular_item.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/common_categories_item.dart';
-import 'package:crafty_bay/feature/common/slider_icon.dart';
+import 'package:crafty_bay/feature/screen/view/widget/slider_icon.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller.dart';
 import 'package:crafty_bay/feature/screen/utils/image_path.dart';
 import 'package:flutter/material.dart';

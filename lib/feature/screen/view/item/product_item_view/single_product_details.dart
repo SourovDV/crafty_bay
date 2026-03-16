@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:crafty_bay/app/app_color.dart';
-import 'package:crafty_bay/feature/common/carosul.dart';
-import 'package:crafty_bay/feature/common/slider_icon.dart';
+import 'package:crafty_bay/feature/screen/view/widget/carosul.dart';
+import 'package:crafty_bay/feature/screen/view/widget/color_picker.dart';
+import 'package:crafty_bay/feature/screen/view/widget/increment_decrement.dart';
+import 'package:crafty_bay/feature/screen/view/widget/slider_icon.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/product_item_controller/single_product_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -95,38 +97,7 @@ class SingleProductDetails extends GetView<SingleProductDetailsController> {
                         ),
                       ),
 
-                      Row(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.blue,
-                            child: IconButton(
-                              onPressed: () {
-                                if (controller.initialData > 0) {
-                                  return controller.decrement();
-                                }
-                              },
-                              icon: Icon(Icons.remove, color: Colors.white),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 8),
-                            child: Obx(
-                              () => Text(controller.initialData.toString()),
-                            ),
-                          ),
-                          CircleAvatar(
-                            backgroundColor: Colors.blue,
-                            child: IconButton(
-                              onPressed: () {
-                                if (controller.initialData < 15) {
-                                  return controller.increment();
-                                }
-                              },
-                              icon: Icon(Icons.add, color: Colors.white),
-                            ),
-                          ),
-                        ],
-                      ),
+                      IncrementDecrement(controller: controller),
                     ],
                   ),
 
@@ -147,23 +118,6 @@ class SingleProductDetails extends GetView<SingleProductDetailsController> {
 
                   const SizedBox(height: 20),
 
-                  /// color
-                  const Text(
-                    "Color",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  ),
-
-                  const SizedBox(height: 10),
-
-                  Row(
-                    children: [
-                      _colorCircle(Colors.black),
-                      _colorCircle(Colors.teal, selected: true),
-                      _colorCircle(Colors.brown),
-                      _colorCircle(Colors.grey.shade300),
-                      _colorCircle(Colors.grey),
-                    ],
-                  ),
 
                   const SizedBox(height: 20),
 
@@ -172,18 +126,12 @@ class SingleProductDetails extends GetView<SingleProductDetailsController> {
                     "Size",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
-
-                  const SizedBox(height: 10),
-
-                  Row(
-                    children: [
-                      _sizeBox("X"),
-                      _sizeBox("XL", selected: true),
-                      _sizeBox("2L"),
-                      _sizeBox("X"),
-                    ],
+                  ColorPicker(data: ["Red","blue","yellow","green"], text: 'Color',
                   ),
-
+                  SizedBox(height: 10.h,),
+                  ColorPicker(data: ["2x","3x","4x","5x"], text: 'Size',
+                  ),
+            
                   const SizedBox(height: 20),
 
                   /// description
@@ -246,33 +194,6 @@ class SingleProductDetails extends GetView<SingleProductDetailsController> {
     );
   }
 
-  /// color circle
-  Widget _colorCircle(Color color, {bool selected = false}) {
-    return Container(
-      margin: const EdgeInsets.only(right: 10),
-      padding: const EdgeInsets.all(3),
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: selected ? Border.all(color: Colors.teal, width: 2) : null,
-      ),
-      child: CircleAvatar(radius: 12, backgroundColor: color),
-    );
-  }
 
-  /// size box
-  Widget _sizeBox(String text, {bool selected = false}) {
-    return Container(
-      margin: const EdgeInsets.only(right: 10),
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-      decoration: BoxDecoration(
-        color: selected ? Colors.teal : Colors.transparent,
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.grey),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(color: selected ? Colors.white : Colors.black),
-      ),
-    );
-  }
 }
+
