@@ -1,4 +1,4 @@
-import 'package:crafty_bay/feature/screen/controller/item_controller/card_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/card_controller/card_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_details_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/common_categories_controller.dart';
@@ -6,6 +6,8 @@ import 'package:crafty_bay/feature/screen/controller/item_controller/product_ite
 import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/item_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/product_item_controller/single_product_details_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/review_controller/add_review_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/review_controller/review_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/wish_controller/wish_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/otp_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/sign_in_controller.dart';
@@ -30,6 +32,8 @@ class AllBindings extends Bindings{
     Get.lazyPut(()=>SingleProductDetailsController());
     Get.lazyPut(()=>CommonPopularItemController());
     Get.lazyPut(()=>SingleProductDetailsController());
+    Get.lazyPut(()=>ReviewController());
+    Get.lazyPut(()=>AddReviewController());
 
   }
 

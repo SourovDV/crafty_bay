@@ -9,4 +9,6 @@ class AppPages{
   static final String singleProductDetails = '/single_product';
   static final String commonPopularItem = '/common_popular_item';
   static final String singleProduct = '/singleProduct';
+  static final String review = '/review';
+  static final String addReview = '/add_review';
 }

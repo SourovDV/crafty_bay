@@ -5,6 +5,8 @@ import 'package:crafty_bay/feature/screen/view/item/categories/common_categories
 import 'package:crafty_bay/feature/screen/view/item/product_item_view/common_popular_item.dart';
 import 'package:crafty_bay/feature/screen/view/item/item_view.dart';
 import 'package:crafty_bay/feature/screen/view/item/product_item_view/single_product_details.dart';
+import 'package:crafty_bay/feature/screen/view/item/review/add_review.dart';
+import 'package:crafty_bay/feature/screen/view/item/review/review_view.dart';
 import 'package:crafty_bay/feature/screen/view/otp_screen.dart';
 import 'package:crafty_bay/feature/screen/view/sign_in_view.dart';
 import 'package:crafty_bay/feature/screen/view/sign_up_screen.dart';
@@ -23,5 +25,7 @@ class AppRoutes{
     GetPage(name: AppPages.commonCategories, page:()=>CategoriesItem(),binding: AllBindings()),
     GetPage(name: AppPages.commonPopularItem, page:()=>CommonPopularItem(),binding: AllBindings()),
     GetPage(name: AppPages.singleProductDetails, page:()=>SingleProductDetails(),binding: AllBindings()),
+    GetPage(name: AppPages.review, page:()=>ReviewView(),binding: AllBindings()),
+    GetPage(name: AppPages.addReview, page:()=>AddReview(),binding: AllBindings()),
   ];
 }

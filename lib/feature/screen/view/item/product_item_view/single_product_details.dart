@@ -18,7 +18,6 @@ class SingleProductDetails extends GetView<SingleProductDetailsController> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("Product Details"),
-        leading: const Icon(Icons.arrow_back),
         elevation: 0,
       ),
       body: Column(
@@ -97,7 +96,7 @@ class SingleProductDetails extends GetView<SingleProductDetailsController> {
                         ),
                       ),
 
-                      IncrementDecrement(controller: controller),
+                      IncrementDecrement(),
                     ],
                   ),
 
@@ -105,12 +104,14 @@ class SingleProductDetails extends GetView<SingleProductDetailsController> {
 
                   /// rating
                   Row(
-                    children: const [
+                    children:  [
                       Icon(Icons.star, color: Colors.amber),
                       SizedBox(width: 5),
                       Text("4.8"),
                       SizedBox(width: 10),
-                      Text("Reviews", style: TextStyle(color: Colors.teal)),
+                      InkWell(
+                          onTap:controller.moveToReviewPage,
+                          child: Text("Reviews", style: TextStyle(color: Colors.teal))),
                       SizedBox(width: 10),
                       Icon(Icons.favorite_border, color: Colors.teal),
                     ],
