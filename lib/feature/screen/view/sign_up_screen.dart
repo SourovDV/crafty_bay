@@ -36,44 +36,57 @@ class SignUpScreen extends GetView<SignUpController> {
 
   Form buildTextFormField(BuildContext context) {
     return Form(
+      key: controller.key,
       child: Column(
         children: [
           TextFormField(
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(hintText: "Email"),
+            controller: controller.emailController,
           ),
           SizedBox(height: 5.h),
           TextFormField(
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(hintText: "First name"),
+            controller: controller.firstNameController,
           ),
           SizedBox(height: 5.h),
           TextFormField(
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(hintText: "Last Name"),
+            controller: controller.lastNameController,
           ),
           SizedBox(height: 5.h),
           TextFormField(
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(hintText: "Phone"),
+            controller: controller.phoneController,
           ),
           SizedBox(height: 5.h),
           TextFormField(
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(hintText: "Delivery Address"),
+            controller: controller.deliveryController,
           ),
           SizedBox(height: 5.h),
           TextFormField(
             textInputAction: TextInputAction.next,
             decoration: InputDecoration(hintText: "Password"),
+            controller: controller.passwordController,
           ),
           SizedBox(height: 15.h),
-          CommonNextButton(
-            text: "Sign Up",
-            call: () {
-              controller.moveToOtpPage();
-            },
-          ),
+          Obx(()=> Visibility(
+              visible: controller.signUpProgress.value == false,
+              replacement: CircularProgressIndicator(),
+              child:  CommonNextButton(
+                text: "Sign Up",
+                call: () {
+                  print("call1");
+                  controller.submitButton();
+                  print("call2");
+                },
+              ),
+          ),),
           SizedBox(height: 10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

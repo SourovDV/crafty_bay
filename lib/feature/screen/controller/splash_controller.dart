@@ -1,10 +1,17 @@
 import 'package:crafty_bay/app/appPages.dart';
+import 'package:crafty_bay/feature/screen/controller/AuthController/authController.dart';
 import 'package:get/get.dart';
 
 class SplashController extends GetxController{
-    Future<void> moveToSignInPage()async{
+    Future<void> moveToSignInPage()async {
       await Future.delayed(Duration(seconds: 2));
-      Get.toNamed(AppPages.signInScreen);
+      AuthController authController = Get.find<AuthController>();
+      bool isUserLoggedIn = await authController.isLoggedIn();
+      if (isUserLoggedIn) {
+        Get.toNamed(AppPages.itemScreen);
+      } else{
+        Get.toNamed(AppPages.signInScreen);
+    }
     }
 
     @override

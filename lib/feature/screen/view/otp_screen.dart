@@ -1,5 +1,6 @@
 import 'package:crafty_bay/core/extension.dart';
 import 'package:crafty_bay/feature/common/common_next_button.dart';
+import 'package:crafty_bay/feature/data/userModel/otp_model.dart';
 import 'package:crafty_bay/feature/screen/controller/otp_controller.dart';
 import 'package:crafty_bay/feature/screen/utils/image_path.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +32,13 @@ class OtpScreen extends GetView<OtpController> {
             SizedBox(height: 10.h),
             buildMaterialPinField(),
             SizedBox(height: 15.h),
-            CommonNextButton(text: 'Next', call: () {}),
+           Obx(()=> Visibility(
+             visible: controller.otpProgress.value == false,
+             replacement: CircularProgressIndicator(),
+             child: CommonNextButton(text: 'Next', call: () {
+               // controller.otpSubmit(OtpModel(email: , otp: otp))
+             }),
+           ),),
             SizedBox(height: 10.h),
             Text(context.localizations.thisCodeWillExpireIn),
             Text(context.localizations.resendCode),
@@ -43,9 +50,9 @@ class OtpScreen extends GetView<OtpController> {
 
   MaterialPinField buildMaterialPinField() {
     return MaterialPinField(
-      length: 6,
-      onCompleted: (pin) => print('PIN: $pin'),
-      onChanged: (value) => print('Changed: $value'),
+      length: 4,
+      onCompleted: (value)=>controller.otp.value = value,
+      onChanged: (value) => controller.otp.value = value,
       theme: MaterialPinTheme(
         shape: MaterialPinShape.outlined,
         cellSize: Size(56, 64),

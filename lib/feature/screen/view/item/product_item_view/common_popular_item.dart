@@ -1,5 +1,6 @@
 import 'package:crafty_bay/feature/screen/controller/item_controller/product_item_controller/common_popular_item_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CommonPopularItem extends GetView<CommonPopularItemController> {
@@ -11,7 +12,7 @@ class CommonPopularItem extends GetView<CommonPopularItemController> {
       onTap:controller.moveToPopularDetails,
       child: Container(
         margin: EdgeInsets.only(right: 10),
-        width: 160,
+        width: 160.w,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),

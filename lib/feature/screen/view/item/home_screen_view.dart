@@ -41,47 +41,16 @@ class HomeScreenView extends GetView<HomeController> {
               itemSection(theme: theme, name: context.localizations.popular, onTap: () {  },),
               SizedBox(height: 20.h),
 
-              SizedBox(
-                height: 200.h,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return CommonPopularItem();
-                  },
-                ),
-              ),
+              allProducts(),
               SizedBox(height: 20.h),
               //special
               itemSection(theme: theme, name: context.localizations.special, onTap: () {  },),
               SizedBox(height: 20.h),
-              SizedBox(
-                height: 200.h,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return CommonPopularItem();
-                  },
-                ),
-              ),
-
+              allProducts(),
               //new
               itemSection(theme: theme, name: context.localizations.notun, onTap: () {  },),
               SizedBox(height: 20.h),
-              SizedBox(
-                height: 200.h,
-                width: double.infinity,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return CommonPopularItem();
-                  },
-                ),
-              ),
+              allProducts()
             ],
           ),
         ),
@@ -89,11 +58,23 @@ class HomeScreenView extends GetView<HomeController> {
     );
   }
 
-
+  SizedBox allProducts() {
+    return SizedBox(
+              height: 250.h,
+              width: double.infinity,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return CommonPopularItem();
+                },
+              ),
+            );
+  }
 
   SizedBox allCategories() {
     return SizedBox(
-      height: 120.h,
+      height: 140.h,
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,

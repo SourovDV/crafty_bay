@@ -1,8 +1,9 @@
 import 'dart:convert';
-
+import 'package:crafty_bay/feature/screen/controller/AuthController/authController.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_instance/get_instance.dart';
 import 'package:http/http.dart';
 import 'package:logger/logger.dart';
-
 class NetworkResponse {
   final int statusCode;
   final bool isSuccess;
@@ -15,13 +16,14 @@ class NetworkResponse {
      this.responsesData,
   });
 }
-
 class NetworkCaller{
   var logger = Logger();
+  AuthController authController =Get.find();
   //get request
    Future<NetworkResponse> getRequest({required String url, Map<String,dynamic>?header})async{
     try{
-      Map<String,String> header ={"token":""};
+
+      Map<String,String> header ={"token":authController.token ?? ""};
       Uri uri = Uri.parse(url);
       _logRequest(url,header: header);
       Response response =await get(uri,headers: header);
@@ -46,7 +48,7 @@ class NetworkCaller{
       };
       Uri uri = Uri.parse(url);
       _logRequest(url,header:header);
-      Response response =await post(uri,headers: header,body: jsonEncode(items));
+      Response response =await post(uri,headers:header,body:jsonEncode(items));
       _logResponses(url, response);
       if(response.statusCode >= 200 && response.statusCode < 300){
         return NetworkResponse(statusCode: response.statusCode, isSuccess: true,responsesData: response.body.isNotEmpty ? jsonDecode(response.body):null);
@@ -59,7 +61,8 @@ class NetworkCaller{
     }catch(e){
       return NetworkResponse(statusCode: -1, isSuccess: false,errorSms: e.toString());
     }
-  }//post request
+  }
+  //patch request
    Future<NetworkResponse> patchRequest({required String url, Map<String,dynamic>?items})async{
     try{
       Map<String,String> header ={
@@ -80,7 +83,8 @@ class NetworkCaller{
     }catch(e){
       return NetworkResponse(statusCode: -1, isSuccess: false,errorSms: e.toString());
     }
-  }//post request
+  }
+  //put request
    Future<NetworkResponse> putRequest({required String url, Map<String,dynamic>?items})async{
     try{
       Map<String,String> header ={
@@ -101,7 +105,8 @@ class NetworkCaller{
     }catch(e){
       return NetworkResponse(statusCode: -1, isSuccess: false,errorSms: e.toString());
     }
-  }//post request
+  }
+  //delete request
    Future<NetworkResponse> deleteRequest({required String url, Map<String,dynamic>?items})async{
     try{
       Map<String,String> header ={

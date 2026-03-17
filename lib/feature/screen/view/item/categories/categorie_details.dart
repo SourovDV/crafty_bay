@@ -15,13 +15,13 @@ class CategoriesDetailsView extends StatelessWidget {
         child: GridView.builder(
           itemCount: 6,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, // 2 দিলে UI ভালো হবে
+            crossAxisCount: 2, //
             mainAxisSpacing: 15,
             crossAxisSpacing: 15,
             childAspectRatio: 0.7, // ⭐ important
           ),
           itemBuilder: (context, index) {
-            return const CommonPopularItem();
+            return CommonPopularItem();
           },
         ),
       ),

@@ -37,13 +37,15 @@ class SignInView extends GetView<SignInController> {
 
   Form buildTextFormField(BuildContext context) {
     return Form(
+      key: controller.formKey,
       child: Column(
         children: [
-          TextFormField(decoration: InputDecoration(hintText: "Email Address")),
+          TextFormField(decoration: InputDecoration(hintText: "Email Address"),controller: controller.emailController,),
           SizedBox(height: 5.h),
-          TextFormField(decoration: InputDecoration(hintText: "Password")),
+          TextFormField(
+              decoration: InputDecoration(hintText: "Password"),controller: controller.passwordController,),
           SizedBox(height: 15.h),
-          CommonNextButton(text: 'Next', call: () {controller.moveToItemScreen();}),
+          CommonNextButton(text: 'Next', call: () {controller.loginUser();}),
           SizedBox(height: 10.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

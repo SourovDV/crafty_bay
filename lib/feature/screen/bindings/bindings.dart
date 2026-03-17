@@ -1,3 +1,5 @@
+import 'package:crafty_bay/core/network_caller/network_caller.dart';
+import 'package:crafty_bay/feature/screen/controller/AuthController/authController.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/card_controller/card_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_details_controller.dart';
@@ -34,6 +36,8 @@ class AllBindings extends Bindings{
     Get.lazyPut(()=>SingleProductDetailsController());
     Get.lazyPut(()=>ReviewController());
     Get.lazyPut(()=>AddReviewController());
+    Get.lazyPut(()=>NetworkCaller());
+    Get.lazyPut(()=>AuthController());
 
   }
 
