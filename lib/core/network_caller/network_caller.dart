@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:crafty_bay/feature/screen/controller/AuthController/authController.dart';
+import 'package:flutter/foundation.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
 import 'package:http/http.dart';
@@ -45,11 +46,16 @@ class NetworkCaller{
     try{
       Map<String,String> header ={
         "Content-Type": "application/json",
+        "token":authController.token ?? ""
       };
+      debugPrint( "token1 => ${authController.token}");
       Uri uri = Uri.parse(url);
-      _logRequest(url,header:header);
+      _logRequest(url,header:header,token: authController.token);
+      debugPrint( "token2 => ${authController.token}");
       Response response =await post(uri,headers:header,body:jsonEncode(items));
       _logResponses(url, response);
+      debugPrint( "token3 => ${authController.token}");
+
       if(response.statusCode >= 200 && response.statusCode < 300){
         return NetworkResponse(statusCode: response.statusCode, isSuccess: true,responsesData: response.body.isNotEmpty ? jsonDecode(response.body):null);
       }else if(response.statusCode == 401){
@@ -130,8 +136,8 @@ class NetworkCaller{
   }
 
 
-void _logRequest(String url,{ Map<String,dynamic>? header,Map<String,dynamic>? responseBody}){
-    logger.i("Url = $url,\n header => $header,\nresponseBody =>$responseBody}");
+void _logRequest(String url,{String? token,  Map<String,dynamic>? header,Map<String,dynamic>? responseBody}){
+    logger.i("Url = $url,\n token =$token\n header => $header,\nresponseBody =>$responseBody}");
 }
 void _logResponses(String url , Response response){
      logger.i("$url\nstatusCode =>${response.statusCode},\nresponse=>${response}\n,responseBody=>${response.body}");

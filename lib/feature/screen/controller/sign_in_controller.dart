@@ -22,10 +22,9 @@ class SignInController extends GetxController{
     NetworkCaller networkCaller = Get.find<NetworkCaller>();
     NetworkResponse response =await networkCaller.postRequest(url: AppUrls.login,items: model.toJson());
     if(response.isSuccess){
-      String token = response.responsesData!["data"]["token"];
-      UserModel model = UserModel.fromJson( response.responsesData!["data"]["user"]);
+      String token =await response.responsesData!["data"]["token"];
+      UserModel model =await UserModel.fromJson(response.responsesData!["data"]["user"]);
       AuthController authController = Get.find<AuthController>();
-
       authController.saveUserData(token, model);
 
       Get.snackbar("success", "success");

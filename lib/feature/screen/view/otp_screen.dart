@@ -1,6 +1,8 @@
+import 'package:crafty_bay/app/appPages.dart';
 import 'package:crafty_bay/core/extension.dart';
 import 'package:crafty_bay/feature/common/common_next_button.dart';
 import 'package:crafty_bay/feature/data/userModel/otp_model.dart';
+import 'package:crafty_bay/feature/screen/controller/AuthController/authController.dart';
 import 'package:crafty_bay/feature/screen/controller/otp_controller.dart';
 import 'package:crafty_bay/feature/screen/utils/image_path.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,16 @@ class OtpScreen extends GetView<OtpController> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
+    AuthController authController = Get.find<AuthController>();
     return Scaffold(
+      appBar: AppBar(
+        title: InkWell(
+          onTap: (){
+            authController.clearData;
+            Get.toNamed(AppPages.signInScreen);
+          },
+            child: Icon(Icons.logout)),
+      ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(25.r),
         child: Column(
@@ -33,10 +44,11 @@ class OtpScreen extends GetView<OtpController> {
             buildMaterialPinField(),
             SizedBox(height: 15.h),
            Obx(()=> Visibility(
-             visible: controller.otpProgress.value == false,
+             visible: controller.otpProgress.value==false,
              replacement: CircularProgressIndicator(),
              child: CommonNextButton(text: 'Next', call: () {
-               // controller.otpSubmit(OtpModel(email: , otp: otp))
+               AuthController authc = Get.find<AuthController>();
+               controller.otpSubmit(OtpModel(email:controller.email, otp:controller.otp.value));
              }),
            ),),
             SizedBox(height: 10.h),

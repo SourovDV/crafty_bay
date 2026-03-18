@@ -1,14 +1,13 @@
 import 'dart:convert';
-
 import 'package:crafty_bay/feature/data/userModel/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 class AuthController{
+  String ?token;
+  UserModel ?user;
+
   final String _tokenKey= "token";
   final String _user="user";
 
-  String ?token;
-  UserModel ?user;
 
    Future<void> saveUserData(String access_token, UserModel model)async{
     SharedPreferences sharedPreferences =await SharedPreferences.getInstance();
@@ -27,8 +26,8 @@ class AuthController{
 
   Future<bool> isLoggedIn()async{
     SharedPreferences sharedPreferences =await SharedPreferences.getInstance();
-    String ? Token = sharedPreferences.getString(_tokenKey);
-    if(Token != null){
+    String ? token = sharedPreferences.getString(_tokenKey);
+    if(token != null){
       await getUserData();
       return true;
     }

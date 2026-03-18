@@ -36,7 +36,7 @@ class SignUpController extends GetxController {
         url: AppUrls.signUp, items: model.toJson());
     signUpProgress.value = false;
     if (response.isSuccess) {
-      Get.toNamed(AppPages.otpScreen);
+      Get.toNamed(AppPages.otpScreen,arguments: emailController.text);
       Get.snackbar("sucesss", "sfs");
     } else {
       Get.snackbar("wrong", "wrong");

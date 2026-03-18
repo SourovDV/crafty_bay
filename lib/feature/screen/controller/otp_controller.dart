@@ -6,7 +6,8 @@ import 'package:get/get.dart';
 class OtpController extends GetxController{
   RxString otp = "".obs;
   bool get isValid => otp.value.length == 4;
-  RxBool otpProgress = true.obs;
+  RxBool otpProgress = false.obs;
+  final String email = Get.arguments;
 
   void otpSubmit(OtpModel model){
     if(!isValid){
@@ -16,12 +17,11 @@ class OtpController extends GetxController{
     otpRequest(model);
   }
 
-
   Future<void> otpRequest(OtpModel model)async{
     NetworkCaller networkCaller = Get.find<NetworkCaller>();
-    otpProgress.value = true;
+    otpProgress.value=true;
     NetworkResponse response =await networkCaller.postRequest(url: AppUrls.verifyOtp,items:model.toJson());
-    otpProgress.value = false;
+    otpProgress.value=false;
     if(response.isSuccess){
       Get.snackbar("success","success");
     }else{
