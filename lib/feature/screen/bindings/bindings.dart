@@ -4,8 +4,9 @@ import 'package:crafty_bay/feature/screen/controller/item_controller/card_contro
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_details_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/common_categories_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller/carosel_slider_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/product_item_controller/common_popular_item_controller.dart';
-import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller/home_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/item_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/product_item_controller/single_product_details_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/review_controller/add_review_controller.dart';
@@ -38,6 +39,7 @@ class AllBindings extends Bindings{
     Get.lazyPut(()=>AddReviewController());
     Get.lazyPut(()=>NetworkCaller());
     Get.lazyPut(()=>AuthController());
+    Get.lazyPut(()=>SliderController());
 
   }
 

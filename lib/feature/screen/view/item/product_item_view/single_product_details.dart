@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:crafty_bay/app/app_color.dart';
-import 'package:crafty_bay/feature/screen/view/widget/carosul.dart';
+import 'package:crafty_bay/feature/screen/view/item/homeView/carosul.dart';
 import 'package:crafty_bay/feature/screen/view/widget/color_picker.dart';
 import 'package:crafty_bay/feature/screen/view/widget/increment_decrement.dart';
 import 'package:crafty_bay/feature/screen/view/widget/slider_icon.dart';

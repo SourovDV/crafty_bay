@@ -2,7 +2,7 @@ import 'package:crafty_bay/app/app_color.dart';
 import 'package:crafty_bay/core/extension.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/common_categories_item.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_controller.dart';
-import 'package:crafty_bay/feature/screen/view/item/home_screen_view.dart';
+import 'package:crafty_bay/feature/screen/view/item/homeView/home_screen_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';

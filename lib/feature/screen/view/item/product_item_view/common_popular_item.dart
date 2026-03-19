@@ -29,7 +29,7 @@ class CommonPopularItem extends GetView<CommonPopularItemController> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
-              height: 110,
+              height: 110.h,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Color(0xffcfe3e6),

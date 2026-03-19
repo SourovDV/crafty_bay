@@ -1,5 +1,6 @@
 import 'package:crafty_bay/app/app_color.dart';
-import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller/carosel_slider_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
@@ -17,7 +18,7 @@ class CommonSliderIcon extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < controller.sliderController.list.length; i++)
           Obx(
                 () => Container(
               margin: EdgeInsets.only(left: 5),
@@ -25,7 +26,7 @@ class CommonSliderIcon extends StatelessWidget {
               height: 20.h,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: controller.initialIndex.value == i
+                color: controller.sliderController.initialIndex.value == i
                     ? AppColor.colorPrimary
                     : Colors.grey.withOpacity(0.6),
               ),

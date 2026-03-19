@@ -2,6 +2,7 @@ import 'package:crafty_bay/app/appPages.dart';
 import 'package:crafty_bay/feature/screen/bindings/bindings.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/categorie_details.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/common_categories_item.dart';
+import 'package:crafty_bay/feature/screen/view/item/homeView/carosul.dart';
 import 'package:crafty_bay/feature/screen/view/item/product_item_view/common_popular_item.dart';
 import 'package:crafty_bay/feature/screen/view/item/item_view.dart';
 import 'package:crafty_bay/feature/screen/view/item/product_item_view/single_product_details.dart';
@@ -27,5 +28,6 @@ class AppRoutes{
     GetPage(name: AppPages.singleProductDetails, page:()=>SingleProductDetails(),binding: AllBindings()),
     GetPage(name: AppPages.review, page:()=>ReviewView(),binding: AllBindings()),
     GetPage(name: AppPages.addReview, page:()=>AddReview(),binding: AllBindings()),
+    GetPage(name: AppPages.slider, page:()=>CarousalSlider(),binding: AllBindings()),
   ];
 }

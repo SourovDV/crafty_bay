@@ -11,4 +11,5 @@ class AppPages{
   static final String singleProduct = '/singleProduct';
   static final String review = '/review';
   static final String addReview = '/add_review';
+  static final String slider = '/slider';
 }

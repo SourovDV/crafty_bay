@@ -2,11 +2,11 @@ import 'package:crafty_bay/app/appPages.dart';
 import 'package:crafty_bay/app/app_color.dart';
 import 'package:crafty_bay/core/extension.dart';
 import 'package:crafty_bay/feature/screen/controller/AuthController/authController.dart';
-import 'package:crafty_bay/feature/screen/view/widget/carosul.dart';
+import 'package:crafty_bay/feature/screen/view/item/homeView/carosul.dart';
 import 'package:crafty_bay/feature/screen/view/item/product_item_view/common_popular_item.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/common_categories_item.dart';
 import 'package:crafty_bay/feature/screen/view/widget/slider_icon.dart';
-import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller.dart';
+import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller/home_controller.dart';
 import 'package:crafty_bay/feature/screen/utils/image_path.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -36,7 +36,7 @@ class HomeScreenView extends GetView<HomeController> {
               SizedBox(height: 10.h),
               buildTextFormField(),
               SizedBox(height: 20.h),
-              CarousalSlider(controller: controller),
+              CarousalSlider(),
               SizedBox(height: 10.h),
               CommonSliderIcon(controller: controller),
               SizedBox(height: 10.h),
