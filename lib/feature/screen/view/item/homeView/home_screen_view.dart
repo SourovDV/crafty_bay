@@ -19,14 +19,6 @@ class HomeScreenView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
     return Scaffold(
-      appBar: AppBar(
-        title:IconButton(onPressed: (){
-          AuthController authController = Get.find<AuthController>();
-          authController.clearData();
-          print("a");
-          Get.toNamed(AppPages.signInScreen);
-        }, icon: Icon(Icons.logout),)
-      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: EdgeInsets.all(10),

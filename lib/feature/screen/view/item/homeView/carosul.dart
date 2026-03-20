@@ -10,40 +10,47 @@ class CarousalSlider extends GetView<SliderController> {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() => Visibility(
-      visible: controller.sliderProgress.value == false,
-      replacement: Container(
-        height: 250,
-        child: Center(child: CircularProgressIndicator()),
-      ),
-      child: CarouselSlider(
-        options: CarouselOptions(
-          height: 250.h,
-          viewportFraction: 0.8,
-          autoPlayCurve: Curves.easeInOut,
-          onPageChanged: (index, reason) {
-            controller.initialIndex.value = index;
-          },
+    return Obx(
+      () => Visibility(
+        visible: controller.sliderProgress.value == false,
+        replacement: Container(
+          height: 250,
+          child: Center(child: CircularProgressIndicator()),
         ),
-        items: controller.list.map((item) {
-          return Builder(
-            builder: (BuildContext context) {
-              return Container(
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.symmetric(horizontal: 5.0),
-                decoration: BoxDecoration(
-                  color: AppColor.colorPrimary,
-                  borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(image:NetworkImage(item.photo_url,),fit: BoxFit.cover)
-                ),
-                child: Align(
-                  alignment: Alignment(2, 2),
-                  child: Text("$item"),)
-              );
+        child: CarouselSlider(
+          options: CarouselOptions(
+            autoPlay: true,
+            height: 250.h,
+            viewportFraction: 0.8,
+            autoPlayCurve: Curves.easeInOut,
+            onPageChanged: (index, reason) {
+              controller.initialIndex.value = index;
             },
-          );
-        }).toList(),
+          ),
+          items: controller.list.map((item) {
+            return Builder(
+              builder: (BuildContext context) {
+                return Container(
+                  width: MediaQuery.of(context).size.width,
+                  margin: EdgeInsets.symmetric(horizontal: 5.0),
+                  decoration: BoxDecoration(
+                    color: AppColor.colorPrimary,
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                      image: NetworkImage(item.photo_url),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: Align(
+                    alignment: Alignment(2, 2),
+                    child: Text("$item"),
+                  ),
+                );
+              },
+            );
+          }).toList(),
+        ),
       ),
-    ));
+    );
   }
 }

@@ -15,24 +15,24 @@ class CommonSliderIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Obx(() => Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        for (int i = 0; i < controller.sliderController.list.length; i++)
-          Obx(
-                () => Container(
-              margin: EdgeInsets.only(left: 5),
-              width: 20.w,
-              height: 20.h,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: controller.sliderController.initialIndex.value == i
-                    ? AppColor.colorPrimary
-                    : Colors.grey.withOpacity(0.6),
-              ),
+        for (int i = 0;
+        i < controller.sliderController.list.length;
+        i++)
+          Container(
+            margin: EdgeInsets.only(left: 5),
+            width: 20.w,
+            height: 20.h,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: controller.sliderController.initialIndex.value == i
+                  ? AppColor.colorPrimary
+                  : Colors.grey.withOpacity(0.6),
             ),
           ),
       ],
-    );
+    ));
   }
 }
