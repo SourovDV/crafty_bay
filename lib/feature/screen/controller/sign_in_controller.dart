@@ -17,7 +17,7 @@ class SignInController extends GetxController{
       signInUser(LoginModel(email: emailController.text, password: passwordController.text));
     }
   }
-
+  //for login user
   Future<void> signInUser(LoginModel model)async{
     NetworkCaller networkCaller = Get.find<NetworkCaller>();
     NetworkResponse response =await networkCaller.postRequest(url: AppUrls.login,items: model.toJson());

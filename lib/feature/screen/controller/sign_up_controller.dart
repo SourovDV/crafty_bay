@@ -29,7 +29,7 @@ class SignUpController extends GetxController {
       print("call 3");
     }
   }
-
+//for register user
   Future<void> registerUser(SignUpModel model) async {
     signUpProgress.value = true;
     NetworkResponse response = await networkCaller.postRequest(
@@ -37,7 +37,7 @@ class SignUpController extends GetxController {
     signUpProgress.value = false;
     if (response.isSuccess) {
       Get.toNamed(AppPages.otpScreen,arguments: emailController.text);
-      Get.snackbar("sucesss", "sfs");
+      Get.snackbar("success", "sfs");
     } else {
       Get.snackbar("wrong", "wrong");
     }
