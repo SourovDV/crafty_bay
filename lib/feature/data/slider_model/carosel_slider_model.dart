@@ -4,7 +4,6 @@ class SliderModel {
   final String description;
   final String? brand;
   final String? category;
-
   SliderModel({
     required this.id,
     required this.photo_url,
@@ -12,7 +11,6 @@ class SliderModel {
     required this.brand,
     required this.category,
   });
-
   factory SliderModel.formJson(Map<String, dynamic> json) {
     return SliderModel(
       id: json["_id"],

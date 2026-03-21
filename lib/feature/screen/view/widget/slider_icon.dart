@@ -4,13 +4,11 @@ import 'package:crafty_bay/feature/screen/controller/item_controller/home_contro
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-
 class CommonSliderIcon extends StatelessWidget {
   const CommonSliderIcon({
     super.key,
     required this.controller,
   });
-
   final HomeController controller;
 
   @override

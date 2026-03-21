@@ -4,17 +4,14 @@ import 'package:crafty_bay/feature/screen/view/item/categories/categories_view.d
 import 'package:crafty_bay/feature/screen/view/item/homeView/home_screen_view.dart';
 import 'package:crafty_bay/feature/screen/view/item/wish_view/wish_view.dart';
 import 'package:get/get.dart';
-
 class ItemController extends GetxController{
   RxInt selectIndex = 0.obs;
-
   final List item = [
     HomeScreenView(),
     CategoriesView(),
     CardView(),
     WishView()
   ];
-
   SliderController sliderController = Get.find<SliderController>();
 
   @override
