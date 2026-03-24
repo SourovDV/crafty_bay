@@ -19,11 +19,9 @@ class NetworkResponse {
     this.responsesData,
   });
 }
-
 class NetworkCaller {
   var logger = Logger();
   AuthController authController = Get.find();
-
   //get request
   Future<NetworkResponse> getRequest({
     required String url,
@@ -159,7 +157,6 @@ class NetworkCaller {
       );
     }
   }
-
   //put request
   Future<NetworkResponse> putRequest({
     required String url,

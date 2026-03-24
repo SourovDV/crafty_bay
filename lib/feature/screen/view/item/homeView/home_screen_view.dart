@@ -1,7 +1,4 @@
-import 'package:crafty_bay/app/appPages.dart';
-import 'package:crafty_bay/app/app_color.dart';
 import 'package:crafty_bay/core/extension.dart';
-import 'package:crafty_bay/feature/screen/controller/AuthController/authController.dart';
 import 'package:crafty_bay/feature/screen/view/item/homeView/carosul.dart';
 import 'package:crafty_bay/feature/screen/view/item/product_item_view/common_popular_item.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/common_categories_item.dart';
