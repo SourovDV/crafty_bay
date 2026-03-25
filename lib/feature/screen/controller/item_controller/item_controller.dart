@@ -1,3 +1,4 @@
+import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/categories_controller.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/home_controller/carosel_slider_controller.dart';
 import 'package:crafty_bay/feature/screen/view/item/card/card_view.dart';
 import 'package:crafty_bay/feature/screen/view/item/categories/categories_view.dart';
@@ -13,10 +14,12 @@ class ItemController extends GetxController{
     WishView()
   ];
   SliderController sliderController = Get.find<SliderController>();
+  CategoriesController categoriesController = Get.find<CategoriesController>();
 
   @override
   void onInit() {
     sliderController.getSlider();
+    categoriesController.getCategories();
     super.onInit();
   }
 

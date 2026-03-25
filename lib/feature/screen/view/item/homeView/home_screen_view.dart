@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 class HomeScreenView extends GetView<HomeController> {
-  const HomeScreenView({super.key});
+   const HomeScreenView({super.key});
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context).textTheme;
@@ -75,9 +75,20 @@ class HomeScreenView extends GetView<HomeController> {
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 8,
+        itemCount: controller.categoriesController.list.length,
         itemBuilder: (context, index) {
-          return CategoriesItem();
+          if (controller.categoriesController.categoryProgress.value) {
+            return Center(child: CircularProgressIndicator());
+          }
+
+          if (controller.categoriesController.list.isEmpty) {
+            return Center(child: Text("No Data"));
+          }
+
+          return Obx(()=>Visibility(
+              visible: controller.categoriesController.categoryProgress.value == false,
+              replacement: CircularProgressIndicator(),
+              child: CategoriesItem(category: controller.categoriesController.list[index],)));
         },
       ),
     );

@@ -1,16 +1,18 @@
 import 'package:crafty_bay/app/app_color.dart';
+import 'package:crafty_bay/feature/data/category/category_model.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/categories_controller/common_categories_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 class CategoriesItem extends GetView<CommonCategoriesControllers> {
-  const CategoriesItem({super.key,});
+  const CategoriesItem({this.category});
+  final CategoryModel? category;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){
+      onTap: () {
         controller.moveToCategoriesDetails();
       },
       child: Card(
@@ -20,15 +22,21 @@ class CategoriesItem extends GetView<CommonCategoriesControllers> {
           children: [
             Padding(
               padding: EdgeInsets.all(15),
-              child: Icon(
-                Icons.computer,
-                size: 48.sp,
-                color: AppColor.colorPrimary,
+              child:Column(
+                children: [
+                  Image.network(
+                    category?.icon ?? '',
+                    width: 48.w,
+                    height: 48.h,
+                    fit: BoxFit.contain,
+                  ),
+                  Text("")
+                ],
               ),
             ),
-            Text("Computer")
+
           ],
-        )
+        ),
       ),
     );
   }

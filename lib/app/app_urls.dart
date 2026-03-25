@@ -4,4 +4,5 @@ class AppUrls{
   static final String verifyOtp="$_baseUrl/auth/verify-otp";
   static final String login="$_baseUrl/auth/login";
   static final String slides="$_baseUrl/slides";
+  static final String categories="$_baseUrl/categories";
 }
