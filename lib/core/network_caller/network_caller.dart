@@ -24,10 +24,14 @@ class NetworkCaller {
   AuthController authController = Get.find();
   //get request
   Future<NetworkResponse> getRequest({
-    required String url,
-    Map<String, dynamic>? header,
+    required String url,Map<String,dynamic>?queryParams
   }) async {
     try {
+      url+="?";
+      for(String key in queryParams?.keys ??{}){
+        url += "$key=${queryParams![key]}&";
+      }
+
       Map<String, String> header = {"token": authController.token ?? ""};
       Uri uri = Uri.parse(url);
       _logRequest(url, header: header);

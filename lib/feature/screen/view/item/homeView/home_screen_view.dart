@@ -75,20 +75,9 @@ class HomeScreenView extends GetView<HomeController> {
       width: double.infinity,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: controller.categoriesController.list.length,
+        itemCount: 10,
         itemBuilder: (context, index) {
-          if (controller.categoriesController.categoryProgress.value) {
-            return Center(child: CircularProgressIndicator());
-          }
-
-          if (controller.categoriesController.list.isEmpty) {
-            return Center(child: Text("No Data"));
-          }
-
-          return Obx(()=>Visibility(
-              visible: controller.categoriesController.categoryProgress.value == false,
-              replacement: CircularProgressIndicator(),
-              child: CategoriesItem(category: controller.categoriesController.list[index],)));
+          return CategoriesItem();
         },
       ),
     );

@@ -19,7 +19,6 @@ class ItemController extends GetxController{
   @override
   void onInit() {
     sliderController.getSlider();
-    categoriesController.getCategories();
     super.onInit();
   }
 
