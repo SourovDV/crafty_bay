@@ -16,23 +16,37 @@ class CategoriesView extends GetView<CategoriesController> {
               IconButton(onPressed: (){
                 controller.moveToHome();
               }, icon: Icon(Icons.arrow_back)),
-              Text("Categories ${controller.categoryList.length}"),
+              Text("Categories"),
             ],
           ),
         ),
-      body:Obx(() => GridView.builder(
-        itemCount: controller.categoryList.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 4,
-          crossAxisSpacing: 10,
-          mainAxisSpacing: 10,
-          childAspectRatio: 0.8,
+      body:Obx(() => Visibility(
+        visible: controller.initialProgress.value == false,
+        replacement: CircularProgressIndicator(),
+        child: Column(
+          children: [
+            Expanded(
+              child: GridView.builder(
+                controller:controller.scrollController,
+                itemCount: controller.categoryList.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 0.8,
+                ),
+                itemBuilder: (context, index) {
+                  return CategoriesItem(
+                    category: controller.categoryList[index],
+                  );
+                },
+              ),
+            ),
+            Visibility(
+                visible: controller.isProgress.value,
+                child: LinearProgressIndicator())
+          ],
         ),
-        itemBuilder: (context, index) {
-          return CategoriesItem(
-            category: controller.categoryList[index],
-          );
-        },
       ))
     );
   }

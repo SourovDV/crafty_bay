@@ -2,17 +2,23 @@ import 'package:crafty_bay/app/app_urls.dart';
 import 'package:crafty_bay/core/network_caller/network_caller.dart';
 import 'package:crafty_bay/feature/data/category/category_model.dart';
 import 'package:crafty_bay/feature/screen/controller/item_controller/item_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class CategoriesController extends GetxController {
   RxInt currentPage = 0.obs;
-  RxInt perPageCount = 10.obs;
-  RxInt totalPage =0.obs;
+  RxInt perPageCount = 30.obs;
+  RxInt totalPage = 0.obs;
   RxBool initialProgress = true.obs;
   RxBool isProgress = false.obs;
   RxList<CategoryModel> categoryList = <CategoryModel>[].obs;
+  ScrollController scrollController = ScrollController();
 
-  Future<void> fetchCategories() async {
+  Future<bool> fetchCategories() async {
+    if (totalPage.value != null && currentPage.value > totalPage.value) {
+      return true;
+    }
+    bool isSuccess = false;
     currentPage.value++;
     if (!initialProgress.value) {
       isProgress.value = true;
@@ -27,19 +33,19 @@ class CategoriesController extends GetxController {
           in response.responsesData!["data"]["results"]) {
         lists.add(CategoryModel.formJson(data));
       }
-      ;
-      totalPage!.value = response.responsesData!["data"]["last_page"];
+      isSuccess = true;
+      totalPage.value = response.responsesData?["data"]?["last_page"] ?? 0;
       categoryList.addAll(lists);
-      print("sdfsffssfsfs $lists");
-      print("categoryList $categoryList");
+
     } else {
       Get.snackbar("false", "No data found");
     }
     if (!initialProgress.value) {
-      initialProgress.value = false;
-    } else {
       isProgress.value = false;
+    } else {
+      initialProgress.value = false;
     }
+    return isSuccess;
   }
 
   Future<void> reloadData() async {
@@ -54,10 +60,17 @@ class CategoriesController extends GetxController {
     Get.find<ItemController>().selectIndex.value = 0;
   }
 
-@override
+  void loadMoreData() {
+    if (scrollController.position.extentAfter < 300) {
+      fetchCategories();
+    }
+  }
+
+  @override
   void onInit() {
     // TODO: implement onInit
-    reloadData();
+    fetchCategories();
+    scrollController.addListener(loadMoreData);
     super.onInit();
   }
 }

@@ -73,13 +73,13 @@ class HomeScreenView extends GetView<HomeController> {
     return SizedBox(
       height: 140.h,
       width: double.infinity,
-      child: ListView.builder(
+      child: Obx(()=>ListView.builder(
         scrollDirection: Axis.horizontal,
-        itemCount: 10,
+        itemCount: controller.categoriesController.categoryList.length,
         itemBuilder: (context, index) {
-          return CategoriesItem();
+          return CategoriesItem(category: controller.categoriesController.categoryList[index],);
         },
-      ),
+      ),)
     );
   }
 
